@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="header">
+        <div>
+            <h1> Gif Search </h1>
+        </div>
+        <div class="search">
+            <input type="text" class="searchTerm" #name placeholder="What are you looking for?">
+            <div class="Dropdown">
+                <button class="dropbtn">Show all
+                </button>
+
+            </div>
+            <button type="submit" class="searchButton" (click)="getList(name.value)">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div>
+            <h3> You can search any gif with our search </h3>
+            <h5> Everything you need for your creative projects, banners, presentations, magazines and advertising.</h5>
+        </div>
+
+    </div>
+    <div class="resultSection">
+        <div *ngFor="let item of GiphyList; let i = index">
+            <img [src]="item.images.downsized_still.url">
+        </div>
+    </div>
+    <div [ngClass]="GiphyList?.length > 0 ? 'footer' : 'footer-fixed'">
+        <div class="top-footer">
+        <div class="left-section">
+            <div class="top">
+                <h3>
+                    <pre>
+  Sign Up and 
+  get free content every week.
+    </pre>
+                </h3>
+            </div>
+            <div class="bottom">
+                <input type="text" class="searchTerm transparent-input" #name placeholder="Enter your email.."><br>
+
+                <button type="submit" class="signUpButton">Sign Up</button>
+            </div>
+        </div>
+        <div class="right-center">
+        </div>
+        <div class="right-section">
+            <div class="right-top">
+                <h2> Browse by Categories</h2>
+            </div>
+            <div class="right-bottom">
+                <table>
+                    <tbody>
+                        <tr *ngFor='let items of footerLinks?.first'>
+                            <td ><a href ="#">{{items}} </a> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                        <tr *ngFor='let items of footerLinks?.second'>
+                            <td><a href ="#">{{items}}</a> </td>
+                      
+                        </tr>
+                    </tbody>
+                </table>
+                     
+                <table>
+                    <tbody>
+                        <tr *ngFor='let items of footerLinks?.third'>
+                            <td><a href ="#">{{items}}</a> </td>
+                      
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="links-area">
+                <a href="#">
+                    Affiliates &nbsp;
+                </a>
+                <a href="#">
+                    Contributors  &nbsp;
+                </a>
+                <a href="#">
+                    Press Media  &nbsp;
+                </a>
+                <a href="#">
+                    Careers  &nbsp;
+                </a>
+                <a href="#">
+                    About  &nbsp;
+                </a>
+                <a href="#">
+                    Contact
+                </a>
+            </div>
+            <div class="copyright-area">
+                Copyright @2018 MyCompany
+            </div>
+        </div>
+    </div>
+    
+
+</div>

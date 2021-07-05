@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "GIPHY"
+  "defaultProject": "GIPHY",
+  "cli": {
+    "analytics": false
+  }
 }
